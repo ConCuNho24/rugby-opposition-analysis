@@ -1,0 +1,21 @@
+﻿source_json,match_id,competition,season,round,home_team,away_team,period_type,period_number,home_score,away_score
+super_rugby_2026_blues_vs_chiefs_65866096.json,sr:sport_event:65866096,Super Rugby,Super Rugby 2026,1,Blues,Chiefs,regular_period,1,5,5
+super_rugby_2026_blues_vs_chiefs_65866096.json,sr:sport_event:65866096,Super Rugby,Super Rugby 2026,1,Blues,Chiefs,regular_period,2,10,14
+super_rugby_2026_crusaders_vs_brumbies_65866108.json,sr:sport_event:65866108,Super Rugby,Super Rugby 2026,2,Crusaders,Brumbies,regular_period,1,14,19
+super_rugby_2026_crusaders_vs_brumbies_65866108.json,sr:sport_event:65866108,Super Rugby,Super Rugby 2026,2,Crusaders,Brumbies,regular_period,2,10,31
+super_rugby_2026_fijian_drua_vs_moana_pasifika_65866094.json,sr:sport_event:65866094,Super Rugby,Super Rugby 2026,1,Fijian Drua,Moana Pasifika,regular_period,1,12,28
+super_rugby_2026_fijian_drua_vs_moana_pasifika_65866094.json,sr:sport_event:65866094,Super Rugby,Super Rugby 2026,1,Fijian Drua,Moana Pasifika,regular_period,2,14,12
+super_rugby_2026_highlanders_vs_chiefs_65866104.json,sr:sport_event:65866104,Super Rugby,Super Rugby 2026,2,Highlanders,Chiefs,regular_period,1,7,14
+super_rugby_2026_highlanders_vs_chiefs_65866104.json,sr:sport_event:65866104,Super Rugby,Super Rugby 2026,2,Highlanders,Chiefs,regular_period,2,16,12
+super_rugby_2026_highlanders_vs_crusaders_65866090.json,sr:sport_event:65866090,Super Rugby,Super Rugby 2026,1,Highlanders,Crusaders,regular_period,1,8,10
+super_rugby_2026_highlanders_vs_crusaders_65866090.json,sr:sport_event:65866090,Super Rugby,Super Rugby 2026,1,Highlanders,Crusaders,regular_period,2,17,13
+super_rugby_2026_hurricanes_vs_moana_pasifika_65866100.json,sr:sport_event:65866100,Super Rugby,Super Rugby 2026,2,Hurricanes,Moana Pasifika,regular_period,1,24,5
+super_rugby_2026_hurricanes_vs_moana_pasifika_65866100.json,sr:sport_event:65866100,Super Rugby,Super Rugby 2026,2,Hurricanes,Moana Pasifika,regular_period,2,28,5
+super_rugby_2026_waratahs_vs_fijian_drua_65866102.json,sr:sport_event:65866102,Super Rugby,Super Rugby 2026,2,Waratahs,Fijian Drua,regular_period,1,14,10
+super_rugby_2026_waratahs_vs_fijian_drua_65866102.json,sr:sport_event:65866102,Super Rugby,Super Rugby 2026,2,Waratahs,Fijian Drua,regular_period,2,22,3
+super_rugby_2026_waratahs_vs_reds_65866092.json,sr:sport_event:65866092,Super Rugby,Super Rugby 2026,1,Waratahs,Reds,regular_period,1,17,12
+super_rugby_2026_waratahs_vs_reds_65866092.json,sr:sport_event:65866092,Super Rugby,Super Rugby 2026,1,Waratahs,Reds,regular_period,2,19,0
+super_rugby_2026_western_force_vs_blues_65866106.json,sr:sport_event:65866106,Super Rugby,Super Rugby 2026,2,Western Force,Blues,regular_period,1,17,14
+super_rugby_2026_western_force_vs_blues_65866106.json,sr:sport_event:65866106,Super Rugby,Super Rugby 2026,2,Western Force,Blues,regular_period,2,15,28
+super_rugby_2026_western_force_vs_brumbies_65866098.json,sr:sport_event:65866098,Super Rugby,Super Rugby 2026,1,Western Force,Brumbies,regular_period,1,10,14
+super_rugby_2026_western_force_vs_brumbies_65866098.json,sr:sport_event:65866098,Super Rugby,Super Rugby 2026,1,Western Force,Brumbies,regular_period,2,14,42
