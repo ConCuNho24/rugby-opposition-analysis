@@ -1,167 +1,156 @@
-# Rugby Match Analysis Prototype
+# Interactive Rugby Match Analysis from Structured CSV Data
 
-This is a small Week 9 proof of concept for interactively exploring one Rugby
-Union match at a time. It uses CSV data, pandas calculations, Plotly charts,
-and a Streamlit web interface.
+## Week 9 proof of concept
 
-The app is intentionally descriptive. It does not use an LLM, reconstruct
-possessions, infer attacking direction, or make tactical claims from one match.
-It is isolated from the repository's main rugby-analysis pipeline.
+This contribution demonstrates how structured Rugby Union match data can be
+turned into an interactive, analyst-directed report. A user selects one match
+and one question to investigate; the application then filters the relevant CSV
+records, calculates descriptive metrics, and presents tables, charts, event
+locations, and conservative rule-based observations.
 
-## CSV dataset
+The prototype addresses the following technical question:
 
-The standalone GitHub contribution reads its included 10-match dataset from:
+> Can event-level, team-level, and player-level Rugby Union data be processed
+> automatically and presented through a simple interface without requiring the
+> analyst to write code?
 
-```text
-data\sportradar_10_matches_csv
-```
+This is not presented as a complete opposition-analysis product. It is a small,
+isolated prototype intended to demonstrate a working data pipeline and user
+interaction pattern.
 
-When this prototype is run from its original repository-root location, it can
-also use `data\raw\sportradar_10_matches_csv`. The app automatically prefers
-the bundled folder when it exists.
+## What the prototype demonstrates
 
-The important files are:
-
-- `match_metadata.csv`: one row per match, including teams, competition,
-  season, venue, final score, and event count.
-- `combined_match_events.csv`: all chronological timeline events for all 10
-  matches, including source event type, team, time, score, and available x/y
-  coordinates.
-- `team_statistics.csv`: one row per team per match with possession, carries,
-  metres, tackles, set pieces, discipline, and other box-score statistics.
-- `player_statistics.csv`: player-level match statistics used for leaderboards.
-- `period_scores.csv`: period-level scores. It is loaded for possible simple
-  extensions but is not required by the current charts.
-- `individual_match_events/`: one compatible event CSV per match. These files
-  can be used to demonstrate upload mode.
-
-The old JSON sample may still exist in the prototype folder for preservation,
-but the application does not read it and no JSON file is required.
-
-## Files in this prototype
-
-- `app.py`: Streamlit page, data-source choice, match selector, and the 11
-  analysis views.
-- `analysis.py`: CSV loading, validation, match filtering, calculations, label
-  mappings, and rule-based observations.
-- `charts.py`: comparison charts, player charts, scoring timeline, and reusable
-  rugby-pitch plotting.
-- `requirements.txt`: Streamlit, pandas, and Plotly only.
-
-## Install and run on Windows PowerShell
-
-Open PowerShell and run these commands one at a time:
-
-```powershell
-cd C:\IFB398\rugby-opposition-analysis\prototype_match_analysis
-
-python -m venv .venv
-
-.\.venv\Scripts\Activate.ps1
-
-pip install -r requirements.txt
-
-python -m streamlit run app.py
-```
-
-Inside the team repository, use the contribution directory instead:
-
-```powershell
-cd C:\IFB398\rugby-opposition-analysis\contributions\Kelvin\code
-```
-
-Then run the same virtual-environment, install, and Streamlit commands shown
-above.
-
-After the last command, Streamlit normally opens the application in the default
-browser. If it does not, open the local address printed in PowerShell, usually:
+The implemented workflow is:
 
 ```text
-http://localhost:8501
+CSV match dataset
+        |
+        v
+match selected by match_id
+        |
+        v
+event, team, player, and metadata rows filtered with pandas
+        |
+        v
+user selects one analysis question
+        |
+        v
+metrics and clearly labelled derived values calculated
+        |
+        v
+Streamlit tables + Plotly charts + factual observations
 ```
 
-If PowerShell blocks activation, run this in the same PowerShell window and
-then repeat the activation command:
+The design is intentionally question-led. The interface does not place every
+chart on one dashboard. Instead, the analyst chooses what to investigate, such
+as attacking statistics, set pieces, kicking, discipline, scoring, or an
+individual player metric.
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
+## Data used
 
-This changes policy only for the current PowerShell process.
+The bundled dataset contains 10 Super Rugby 2026 matches derived from
+Sportradar Rugby Union data:
 
-## Use the included 10-match dataset
+- 10 match metadata rows;
+- 3,857 chronological timeline events;
+- 20 team-statistics rows, representing two teams per match;
+- 459 player-statistics rows; and
+- 20 period-score rows.
 
-1. Leave **Use included CSV dataset** selected.
-2. The upload control remains hidden in this mode.
-3. Choose one of the 10 fixtures from **Select match**.
-4. Confirm the teams, final score, venue, and timeline-event count.
-5. Choose one item from **Choose analysis**.
-6. Use any additional team, event, or player-metric selector shown by that
-   analysis.
+The application uses the following CSV tables:
 
-Changing the match filters events, team statistics, player statistics, and
-period scores using `match_id` before the selected analysis is calculated.
+| CSV file | Granularity | Purpose in the prototype |
+|---|---:|---|
+| `match_metadata.csv` | One row per match | Match selector, teams, venue, competition, final score |
+| `combined_match_events.csv` | One row per recorded event | Event counts, locations, kicking, turnovers, penalties, scoring |
+| `team_statistics.csv` | One row per team per match | Attack, defence, set piece, discipline, broader team comparison |
+| `player_statistics.csv` | One row per player per match | Selectable player leaderboards |
+| `period_scores.csv` | One row per period per match | Loaded as an available supporting table; not required by current views |
 
-## Upload another event CSV
+All tables are filtered by `match_id` before calculations are performed. This
+prevents records from different matches being combined accidentally.
 
-1. Clear **Use included CSV dataset**.
-2. The match selector disappears and **Upload a compatible event-level CSV**
-   appears.
-3. Upload `combined_match_events.csv` or one file from
-   `individual_match_events/`.
-4. If the uploaded CSV contains multiple match IDs, choose the required match
-   after upload.
+## Code organisation
 
-At minimum, the upload needs an `event_type` column and must identify the home
-and away teams. A file compatible with the included event CSVs provides the best
-result.
+The implementation is deliberately small and uses three Python modules:
 
-Only one event CSV is uploaded in this deliberately small prototype. Therefore,
-event analyses continue to work, while pages requiring `team_statistics.csv` or
-`player_statistics.csv` show a friendly unavailable-data message.
+### `app.py`
 
-## Application workflow
+Controls the Streamlit user flow:
 
-```text
-included or uploaded CSV
-        -> validate with pandas
-        -> select match_id
-        -> filter relevant CSV rows
-        -> choose one analysis
-        -> calculate metrics
-        -> display tables, charts, pitch locations, and factual observations
-```
+- included-data mode or uploaded event CSV;
+- match selection;
+- match-information summary;
+- analysis selection; and
+- presentation of the selected result.
 
-## Available analyses
+The file mainly coordinates functions rather than containing the analytics
+logic itself.
 
-1. **Match Overview**: final score, possession, tries, and selected team
-   statistics. Uploaded event-only data falls back to event counts.
-2. **Team Performance**: a broader team comparison plus calculated metres per
-   carry and tackle success rate.
-3. **Attacking Analysis**: carries, metres, passes, offloads, clean breaks,
-   tries, try assists, and selectable player leaders.
-4. **Defensive Analysis**: tackles, missed tackles, turnovers won, calculated
-   tackle success, and defensive player leaders.
-5. **Set Piece Analysis**: lineouts won, scrum statistics, calculated scrum
-   success, and selectable set-piece event locations.
-6. **Kicking Analysis**: source `ball_kicked` and `kick_to_touch` counts shown
-   with friendly labels, plus kick locations.
-7. **Turnover Analysis**: turnover event counts, locations, and classification
-   of only the next recorded timeline event.
-8. **Discipline Analysis**: penalties conceded, yellow cards, red cards, and
-   `penalty_awarded` event locations.
-9. **Event Locations**: any available event type filtered by team.
-10. **Scoring Analysis**: scoring timeline, scorer table, and optional scoring
-    locations.
-11. **Player Analysis**: a team and metric selector with a short leaderboard.
+### `analysis.py`
 
-## Source metrics and calculated metrics
+Contains data-processing responsibilities:
 
-Values such as carries, metres run, tackles, missed tackles, turnovers won,
-scrums won, tries, cards, and penalties conceded come directly from the CSV
-source data.
+- CSV loading and validation;
+- missing-column handling;
+- numeric conversion;
+- `match_id` filtering;
+- team and player metric calculation;
+- event filtering and counting;
+- scoring-event preparation; and
+- rule-based factual observations.
 
-The prototype calculates only these clearly labelled values:
+Raw source values remain unchanged internally. Friendly labels are applied only
+at display time through a mapping dictionary.
+
+### `charts.py`
+
+Contains Plotly visualisation functions:
+
+- grouped team comparisons;
+- single-metric comparisons;
+- player leaderboards;
+- scoring timelines; and
+- a reusable Rugby Union pitch for event locations.
+
+Keeping chart construction separate from calculations makes it possible to
+inspect the data logic without also reading the Streamlit interface code.
+
+## Analysis options
+
+| Analysis | Main evidence displayed |
+|---|---|
+| Match Overview | Final score, possession, tries, selected team statistics |
+| Team Performance | Broader comparison of possession, attack, defence, and discipline values |
+| Attacking Analysis | Carries, metres, passes, offloads, clean breaks, tries, player leaders |
+| Defensive Analysis | Tackles, missed tackles, turnovers won, player leaders |
+| Set Piece Analysis | Lineouts won, scrums won/lost, total scrums, set-piece locations |
+| Kicking Analysis | `ball_kicked`, `kick_to_touch`, and source-provided kick locations |
+| Turnover Analysis | Turnover counts, locations, and the next recorded timeline event |
+| Discipline Analysis | Penalties conceded, cards, and `penalty_awarded` locations |
+| Event Locations | User-selected event type and team plotted on the pitch |
+| Scoring Analysis | Scoring timeline, scorer table, and available scoring locations |
+| Player Analysis | User-selected player metric displayed as a table and leaderboard |
+
+Each view includes a **Match observations** section. These statements are
+generated from deterministic comparisons of calculated results. No language
+model is used, and no tactical intent is inferred.
+
+## Source and calculated metrics
+
+Most displayed values come directly from the CSV data. Examples include:
+
+- ball possession;
+- carries and metres run;
+- passes, offloads, and clean breaks;
+- tackles and missed tackles;
+- tries and penalty goals;
+- turnovers won;
+- lineouts and scrums;
+- penalties conceded and cards; and
+- exact source event counts.
+
+The prototype calculates only three additional rates:
 
 ```text
 Metres per carry = meters_run / carries
@@ -171,57 +160,94 @@ Tackle success rate = tackles / (tackles + tackle_missed) * 100
 Scrum success rate = scrums_won / total_scrums * 100
 ```
 
-A calculated value is left unavailable when its denominator is zero or missing.
+These are explicitly labelled as calculated metrics. A value is left
+unavailable when its denominator is zero or missing.
 
 ## Rugby pitch visualisation
 
-Location views draw a reusable pitch with:
+Event coordinates are plotted over a reusable field created with Plotly shapes.
+The visual includes:
 
-- the 0-100 by 0-70 playing area;
-- goal lines, halfway line, and 22-metre lines;
-- optional 5-metre and 15-metre guides;
+- a 0-100 by 0-70 main playing area;
+- goal lines;
+- halfway and 22-metre lines;
+- 5-metre and 15-metre guides; and
 - fixed display limits of x = -5 to 115 and y = -5 to 75.
 
-The slightly wider fixed limits keep the real source coordinates visible,
-including a few points just outside the main playing area, while preventing
-Plotly from creating extreme automatic ranges. Source coordinates are neither
-changed nor clamped.
+The limits include the complete coordinate range in the supplied dataset while
+preventing Plotly from producing misleading automatic ranges. Coordinates are
+not changed or clamped.
 
-The plot shows recorded event locations only. It does not represent player
-movement and does not infer which direction a team was attacking.
+The plot represents recorded event locations, not player movement. The source
+does not explicitly establish attacking direction, so the prototype does not
+make left-to-right or territorial interpretations.
 
-## Recommended 3-5 minute tutor demonstration
+## Data-integrity decisions
 
-1. Start on **Match Overview** with Highlanders vs Crusaders and explain that
-   the match was selected from `match_metadata.csv`, then filtered by
-   `match_id` across the other CSVs.
-2. Open **Team Performance** and point out the difference between source
-   statistics and the two clearly labelled calculated metrics.
-3. Open **Kicking Analysis**, switch teams, and show recorded kick locations on
-   the fixed rugby pitch.
-4. Open **Event Locations**, choose a team and another event type to demonstrate
-   flexible pandas filtering.
-5. Finish with **Player Analysis** or **Scoring Analysis** to show that the same
-   selected match supports both team-level and player/event-level questions.
+Several constraints are enforced to avoid overclaiming:
 
-Before presenting, click **Don't show again** on any Streamlit helper popup such
-as "Help agents write better apps". The prototype does not use unsupported CSS
-to hide Streamlit system interface elements.
+1. Source event terminology is retained. For example, `ball_recycled` is not
+   renamed as a ruck, carry, or tackle.
+2. Events without a recorded team are not counted as team events.
+3. Missing x/y coordinates are excluded only from location plots, not from
+   non-spatial event counts.
+4. Missing scorer names are displayed as `Not provided`.
+5. `ball_kicked` and `kick_to_touch` remain separate source labels; the code
+   does not assume that two records represent one unique physical kick.
+6. The turnover follow-up category describes only the immediately following
+   timeline record, not a reconstructed possession sequence.
+7. `penalty_awarded` event locations are not treated as equivalent to the
+   box-score field `penalties_conceded`.
 
-## Limitations to mention
+## CSV upload behaviour
 
-- Results describe one selected match and do not establish long-term team
-  tendencies or tactical superiority.
-- Source event names remain unchanged internally. For example,
-  `ball_recycled` is not renamed as a ruck, carry, or tackle.
-- `ball_kicked` and `kick_to_touch` are separate source records; the app does
-  not assume they are unique physical kicks.
-- A turnover's following category is only the next recorded event, not a
-  reconstructed possession sequence.
-- `penalty_awarded` event locations are kept separate from the team box-score
-  field `penalties_conceded`.
-- Some source events have no team, scorer, or coordinates. They are handled
-  safely but cannot be reconstructed.
-- The coordinate system does not explicitly confirm attacking direction.
-- Upload mode accepts one event-level CSV, so detailed team/player pages require
-  the included dataset.
+The included dataset is the primary demonstration mode. The user may instead
+upload a compatible event-level CSV. Event-based analyses continue to work in
+that mode. Analyses that require team or player box-score tables display a
+clear unavailable-data message rather than failing or inventing values.
+
+Validation also provides readable errors for an empty CSV, a missing
+`event_type` column, or missing home/away team information.
+
+## Verification completed
+
+The prototype was checked programmatically against the supplied data:
+
+- all 10 matches appear in the selector;
+- changing the selected match changes the filtered data;
+- all 11 analysis views run for the included dataset;
+- all 11 views fail gracefully with an event-only uploaded CSV;
+- 3,857 events and the expected team/player tables load successfully;
+- missing coordinates and missing scorer information do not cause a crash;
+- the included-data mode hides the CSV uploader;
+- the Rugby pitch uses fixed, non-extreme axis ranges; and
+- a live Streamlit server returned a successful health response.
+
+## Scope and limitations
+
+- Results describe one selected match and cannot establish season-long team
+  tendencies.
+- The prototype reports recorded data and does not evaluate tactical quality.
+- It does not reconstruct possession chains, player movement, or attacking
+  direction.
+- Data completeness depends on the source provider.
+- Upload mode accepts one event-level CSV and therefore cannot reproduce
+  team/player box-score analysis unless those tables are part of the included
+  dataset.
+- The prototype does not include a database, authentication, external API,
+  live data, machine learning, or video analysis.
+
+These boundaries are deliberate. The contribution demonstrates a small,
+traceable path from structured match data to interactive descriptive analysis
+without presenting the output as advanced tactical insight.
+
+## Minimal execution check
+
+From `contributions/Kelvin/code`:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python -m streamlit run app.py
+```
