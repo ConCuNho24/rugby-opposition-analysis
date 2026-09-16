@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Downloaded public source data and generated internal stores are reproducible.
+data/raw/rugby_data_premiership_2024_2025/
+data/processed/
+data/state/processing_manifest.json
+outputs/charts/
+outputs/reports/
+outputs/data_profile.json
+
+# Keep directory markers and intentionally small architecture-test fixture.
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/state/.gitkeep
+!data/synthetic/reformatted_public_sample.csv
+!outputs/charts/.gitkeep
+!outputs/reports/.gitkeep

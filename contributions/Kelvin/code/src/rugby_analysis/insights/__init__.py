@@ -1,0 +1,1 @@
+"""Descriptive candidate-insight rules."""
