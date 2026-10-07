@@ -1,0 +1,10 @@
+# Partner-provided source data must remain local.
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated previews and local runtime artefacts.
+outputs/*
+!outputs/.gitkeep
+__pycache__/
+.pytest_cache/
+.venv/
