@@ -5,7 +5,7 @@
 **Author:** Ngoc Ha Nguyen (n12248746)
 **Weeks covered:** 7 to 11
 
-> Items in [square brackets] are placeholders for links or dates that need to be filled in from the Team's records before submission.
+> Emails were exchanged through the Team's QUT email accounts and are kept in those mailboxes. Partner-owned materials, such as the shared Q&A document and the Fijian Drua preview, are held by the Team and are not published in this public repository.
 
 ## Part A. Possible Prototype Directions
 
@@ -62,13 +62,15 @@ Ratings: High, Medium or Low. "Fit with current data" reflects that the Partner 
 
 | Date | Type | Summary | Evidence |
 |---|---|---|---|
-| Weeks 6 to 7 | Email (Team to Partner) | Introduced Team T243, confirmed interest in P631 and proposed meeting times | [link to email] |
-| Weeks 6 to 7 | Email | First meeting confirmed for Friday 4 September | [link to email] |
-| Before 4 September | Prepared questions | Questions on workflow, data, tools, pain points and expectations (Section B3) | [link to question document] |
+| Weeks 6 to 7 | Email (Team to Partner) | Introduced Team T243, confirmed interest in P631 and proposed meeting times, following the Tutor's Week 5 advice | Team QUT mailbox. Advice in [Tutor Meeting Week 5 Notes](#c1-tutor-meeting-week-5-notes) |
+| Weeks 6 to 7 | Email | First meeting confirmed for Friday 4 September | Team QUT mailbox |
+| Before 4 September | Prepared questions | Questions on workflow, data, tools, pain points and expectations (Section B3) | Section B3 |
 | Friday 4 September 2026 | First Partner meeting | Discussion with Dimitri and Jack about current workflows and pain points (Section B2) | [Partner Meeting 1 Summary](IFB398_T243_Partner_Meeting_1_Summary.docx) |
-| Weeks 8 to 9 | Email (Team to Partner) | Follow-up requesting the sample CSV files and existing notebooks discussed at the meeting | [link to email] |
-| Weeks 9 to 11 [exact date] | Partner response | Representative event dataset (Reds v Waratahs), Q&A document and the Fijian Drua opposition preview were shared | [link] |
-| Week 11 | Email draft (Team to Partner) | Clarification questions from data validation (Section B4) | [link once sent] |
+| Weeks 8 to 9 | Email (Team to Partner) | Follow-up requesting the sample CSV files and existing notebooks discussed at the meeting | Team QUT mailbox |
+| Week 9 | Tutor meeting | Tutor advised continuing to follow up with the Partner, including by phone, and reporting contact attempts if there was no response | [Tutor Meeting Week 9 Notes](#c2-tutor-meeting-week-9-notes) |
+| Week 9 | Open questions | Questions still to be answered once the Partner's files arrive | [Open Questions](../../Nao/reports/Open%20questions.docx) |
+| Weeks 9 to 11 | Partner response | Representative event dataset (Reds versus Waratahs), a shared Q&A document and the Fijian Drua opposition preview were provided | Held by the Team. Not published because they are Partner materials |
+| Week 11 | Email draft (Team to Partner) | Clarification questions from data validation (Section B4) | Section B4. To be sent after Team review |
 
 ### B2. First Partner meeting summary (Friday 4 September 2026)
 
@@ -99,7 +101,7 @@ The full summary is in [IFB398_T243_Partner_Meeting_1_Summary.docx](IFB398_T243_
 
 ### B3. Questions we prepared for the Partner
 
-The questions were grouped by theme so that the meeting could move from the current process to expectations.
+This list summarises the question themes recorded in our Week 7 report, together with the general questions the Tutor recommended in Week 5 ([Tutor Meeting Week 5 Notes](#c1-tutor-meeting-week-5-notes)). The questions were grouped by theme so that the meeting could move from the current process to expectations.
 
 **Current workflow**
 1. Can you walk us through how an opposition preview is produced, from receiving the data to giving the report to coaches?
@@ -118,10 +120,12 @@ The questions were grouped by theme so that the meeting could move from the curr
 **Expectations and constraints**
 9. What would a successful outcome look like at the end of this semester?
 10. Are there technical requirements, such as preferred languages, platforms or security rules for the data?
-11. Is there earlier work, for example from previous capstone teams, that we should build on?
-12. How would you prefer to communicate with the Team, and how often?
+11. Is this a new project, or does it continue work from a previous Capstone team? If so, where can we access that work?
+12. Should we create our own Git repository or use yours?
+13. Will we use our own equipment or equipment provided by QUT or the Partner?
+14. How would you prefer to communicate with the Team, and how often?
 
-[Replace or adjust this list with the final version the Team used, and link the original document.]
+After the meeting, the questions that remained open were recorded by Nao in [Open Questions](../../Nao/reports/Open%20questions.docx).
 
 ### B4. Follow-up email to the Partner (Week 11 draft)
 
@@ -157,8 +161,446 @@ The first follow-up email, sent between Weeks 8 and 9, requested the sample file
 | Evidence | Location |
 |---|---|
 | First Partner meeting summary | [IFB398_T243_Partner_Meeting_1_Summary.docx](IFB398_T243_Partner_Meeting_1_Summary.docx) |
-| Recording or transcript of the first Partner meeting | [link] |
-| Team meeting notes from tutorials | [link to NOTE document] |
-| Partner Q&A document | [link] |
-| Fijian Drua opposition preview, as provided by the Partner | [link, shared within the Team only if the Partner permits] |
-| Data validation results that informed the follow-up questions | `validation_results.md` |
+| Recording and transcript of the first Partner meeting | Prepared by Star from the meeting recording and held by the Team. Not published because it contains the Partner's own words. The content is captured in the meeting summary above |
+| Tutor meeting notes | [Tutor Meeting Week 5 Notes](#c1-tutor-meeting-week-5-notes), [Tutor Meeting Week 9 Notes](#c2-tutor-meeting-week-9-notes) |
+| Open questions after the first Partner meeting | [Open Questions](../../Nao/reports/Open%20questions.docx) |
+| Partner Q&A document | Held by the Team. Not published because it is a Partner document |
+| Fijian Drua opposition preview, as provided by the Partner | Held by the Team. Not published because it is the Partner's internal analysis. Reviewed in [Data Understanding and Validation](Data_Understanding_and_Validation.md), Section 5.2 |
+| Data validation results that informed the follow-up questions | [validation_results.md](validation_results.md) |
+
+## Part C. Tutor Meeting Notes
+
+These notes record the Tutor's advice on Partner communication, evidence and the prototype. They are referenced in Sections B1, B3 and B5.
+
+### C1. Tutor Meeting Week 5 Notes
+
+**Participants:** Tutor and Team T243  
+**Main topic:** Industry Partner preparation, first client meeting, and IFB398 Phase 1
+
+---
+
+#### 1. Industry Partner Introduction and Photos
+
+**Tutor:**  
+Have you guys got your Intro to Industry Partner approved yet?
+
+**Student 1:**  
+Not yet. I have submitted it a few times.
+
+**Tutor:**  
+Okay, let me quickly have a look at your Intro to Industry Partner and see what the issue is.
+
+It looks like the only issue is the photos.
+
+There are a couple of options. The quickest way is to have a photo shoot after class. Find a white wall, stand in front of it, take a number of photos, and choose the ones that fit the template best.
+
+Once you have the photos, you can make any small touch-ups you need before putting them into the document so that they look professional.
+
+Get that done as soon as possible. Once the photo issue is resolved, David will probably approve the document and you can move forward with contacting your client.
+
+There is some urgency with this.
+
+---
+
+#### 2. What Happens After the Introduction Is Approved
+
+**Tutor:**  
+You guys have already done a lot of good research in preparation for your client.
+
+Learning the rugby rules is actually quite important for this project because it will help you understand what your Industry Partner is talking about.
+
+Once you update the Intro to Industry Partner, David will probably approve it quite quickly because the photos seem to be the only thing holding you up.
+
+After that, he will send a provisional email to the client letting them know that your team will probably be working with them.
+
+You will also receive your **IP agreements** at that point.
+
+Make sure you check your email and sign the IP agreement as soon as possible.
+
+The faster you complete that, the faster you can move on to contacting your client.
+
+After that, you should receive another email telling you:
+
+**“You are okay to contact the client now.”**
+
+If you already have your first email prepared, you can send it immediately and start organising your first meeting.
+
+---
+
+#### 3. First Email to the Industry Partner
+
+**Tutor:**  
+Have you thought about what you're going to write to your client in your first email?
+
+**Student 3:**  
+We haven't thought about that yet.
+
+**Tutor:**  
+My recommendation is to say something like:
+
+“Hi, we're Team 243. We're excited to have the opportunity to work with you.”
+
+Then give them the **days and times your team is available**.
+
+That allows the client to look at your availability and choose a suitable time.
+
+After that, say:
+
+“If these days and times don't work for you, could you please provide some days and times that you're available?”
+
+Doing this will save you from sending many emails back and forth.
+
+You should also ask:
+
+**“What mode of meeting do you prefer? Would you like to meet in person on campus, or would you prefer Zoom?”**
+
+Hopefully, they will reply with a suitable date and then you can organise your first client meeting.
+
+I also recommend **re-attaching your Intro to Industry Partner document** to your first email.
+
+Remember, your Industry Partner may be a QUT professor who receives around 100 emails a day.
+
+Attaching the document again makes it easy for them to remember who your team is.
+
+---
+
+#### 4. What the Team Should Do Now
+
+**Tutor:**  
+Once you're finished here:
+
+1. Take the new photos.
+    
+2. Upload them into the Intro to Industry Partner document.
+    
+3. Submit the document to Canvas again so David can review it.
+    
+4. Prepare your first email to the client so it is ready to send.
+    
+
+That is probably the fastest way to organise your first client meeting.
+
+After that, you need to prepare a **list of questions for your Industry Partner** based on the project brief.
+
+The project brief only gives you a general description of the project.
+
+You don't know what you don't know.
+
+You will learn much more during your first Industry Partner meeting.
+
+So think carefully about what you want to ask before the meeting so that your team is organised and prepared.
+
+---
+
+#### 5. Questions to Ask the Industry Partner
+
+**Tutor:**  
+Some general questions you could ask include:
+
+**“Do you want us to create our own Git repository, or should we use yours?”**
+
+You should also ask:
+
+**“Is this a new project, or are we continuing a project from a previous Capstone team?”**
+
+Some Capstone projects continue development across several semesters.
+
+If it is a continuation project, ask:
+
+**“Where can we access the work completed by the previous team?”**
+
+and
+
+**“What are your expectations for us moving forward?”**
+
+---
+
+#### 6. Information to Gather During the First Meeting
+
+**Student 4:**  
+What information should we make sure to gather from the Industry Partner during our first meeting?
+
+**Tutor:**  
+It will depend on the Industry Partner and the project.
+
+First, you need to understand **where the project currently stands**.
+
+Ask:
+
+- Is this a new project?
+    
+- Is this a continuation of an existing project?
+    
+- How does the Industry Partner want the team to work?
+    
+- What technologies do they want you to use?
+    
+- How will you access those technologies?
+    
+
+You should also identify what platform the project will use.
+
+For example:
+
+- Is it an Android project?
+    
+- Is it an iOS project?
+    
+- Is it Windows-based?
+    
+- What software or tools will be required?
+    
+
+HiQ has a list of software that students can access.
+
+If you need **Microsoft Azure or Entra ID**, you can also get access through a free Microsoft student account.
+
+You should check with the client about what they expect you to use.
+
+---
+
+#### 7. Equipment and Resources
+
+**Tutor:**  
+You should also ask your Industry Partner about equipment.
+
+At the moment, HiQ does not have additional devices available for students to borrow.
+
+However, because your project has a QUT sponsor, your Industry Partner may have access to equipment that students normally cannot access.
+
+So ask Dmitri whether he expects you to use:
+
+- QUT equipment, or
+    
+- your own equipment.
+    
+
+These are the kinds of things you will find out during the first client meeting.
+
+---
+
+#### 8. Research About the Industry Partner
+
+**Tutor:**  
+I would recommend looking up **Dmitri Perrin** from QUT.
+
+See whether he has published any papers related to rugby.
+
+If he has, read them.
+
+There is a good chance that he has published work in this area, and reading it may help you understand the project and the context better.
+
+I'm giving you these suggestions so that you have useful things to work on while waiting to contact the client.
+
+---
+
+#### 9. What the Team Should Understand Before the Next Tutor Meeting
+
+**Tutor:**  
+By our next meeting, you should be able to identify your **stakeholders** fairly easily.
+
+You may also have a better understanding of the **workflow** that the Industry Partner expects from you.
+
+I would aim to demonstrate that you understand:
+
+- what the project is,
+    
+- who the stakeholders are,
+    
+- how the project may work,
+    
+- and what potential risks the project may have.
+    
+
+You may be able to start identifying risks once you understand the project and stakeholders better.
+
+---
+
+#### 10. Phase 1 Scope
+
+**Tutor:**  
+For your **Phase 1 scope**, you should probably start narrowing it down by around **Week 8**.
+
+You need to decide what part of your artifact or prototype you are going to produce by the end of the semester.
+
+Remember that at the end of IFB398, we only expect you to have **part of your project working**.
+
+We do not expect you to have a complete prototype of the entire project.
+
+What we want is a prototype that demonstrates that your team is capable of building the project.
+
+Phase 1 is mainly:
+
+- research,
+    
+- planning,
+    
+- and developing a small working part of the project.
+    
+
+Phase 2, or IFB399, will be much more focused on full development.
+
+At the end of this semester, you will also create a **sprint plan** for the next phase.
+
+However, you are not permanently locked into that sprint plan.
+
+It can change during IFB399.
+
+---
+
+#### 11. IFB398 Assessment
+
+**Student 1:**  
+I have a question about the grade.
+
+In Canvas, I can see Process 1.1 to 1.5, which together count for 20% of the semester.
+
+Where does the other 80% come from?
+
+**Tutor:**  
+The other 80% comes from your final assessments.
+
+You will have a **12-minute presentation**.
+
+It will probably be a Zoom presentation where all team members present to me and David.
+
+Your other assessment will be a **paper/report**.
+
+That is where the remaining marks come from.
+
+**Student 4:**  
+For the presentation, are we mainly presenting what we did and explaining our process?
+
+**Tutor:**  
+Yes.
+
+You will create a slideshow and talk about:
+
+- your planning,
+    
+- the work you have completed,
+    
+- and where you plan to take the project in IFB399.
+    
+
+We will discuss the presentation in more detail closer to the due date.
+
+---
+
+#### 12. Coding During Phase 1
+
+**Student 1:**  
+What if the client asks us to implement something this semester?
+
+I saw some students last semester doing coding during Phase 1.
+
+**Tutor:**  
+Yes, that happens.
+
+Most likely, you will do some coding this semester.
+
+You need to work towards something because you have to demonstrate **a portion of your artifact** before you can progress to the next phase.
+
+You will also need to talk to your client about whether they want you to:
+
+- work in their Git repository, or
+    
+- create your own Git repository.
+    
+
+Most of this semester will focus on planning.
+
+For example, you may work on:
+
+- user stories,
+    
+- wireframes,
+    
+- research,
+    
+- requirements,
+    
+- planning,
+    
+
+and then move into coding.
+
+By the end of the semester, you need to demonstrate that you can build at least part of the artifact.
+
+---
+
+#### 13. Following Up With the Client
+
+**Tutor:**  
+If you send an email to your client and **do not hear back within 48 hours**, send another email.
+
+They may simply have missed the first one.
+
+It is not rude to follow up.
+
+You are just reminding them.
+
+**Student 1:**  
+Most of our other questions are technical questions.
+
+**Tutor:**  
+That's good.
+
+Put those technical questions on your list of questions to ask during your first Industry Partner meeting.
+
+Alright, awesome.
+
+You guys are free to go.
+
+Good luck getting your first meeting with your client!
+
+---
+
+### C2. Tutor Meeting Week 9 Notes
+
+**Participants:** Tutor (Sarah Mitchell) and Team T243
+**Main topics:** Partner communication while waiting for data, end-of-semester prototype, and fortnightly documentation
+
+> This is a summary prepared from the meeting recording. The full transcript is held by the Team.
+
+---
+
+#### 1. Partner communication
+
+- The Team confirmed that it has already had its first meeting with the Partner. The Tutor noted that some other teams had attended a separate all-cohort session.
+- From that meeting, the Team understood that the Partner's current system uses Python and that Python is recommended.
+- The Team explained the current workflow. Data from an opponent's recent matches is analysed each week and the insights are given to the coaches. The pain point is that this analysis process is repeated every week and takes time, so the aim is to automate it.
+- The sample data and notebooks had not yet been received.
+
+**Tutor advice**
+
+- Continue following up with the Partner, including by phone.
+- If there is no response within about a week, email the Tutor with evidence of the contact attempts, including the dates and times of calls, so that the teaching team can follow up.
+- Waiting on a client is common in Capstone. What matters is that the Team keeps making progress and shows initiative.
+
+---
+
+#### 2. Prototype for the end of semester
+
+- A Team member demonstrated an early prototype. Users upload a CSV file of match events, choose a match and an analysis area such as kicking or turnovers, and the results are shown on a pitch map.
+- The Tutor confirmed that this is the right basis for the end-of-semester prototype. It is locally hosted, has filters and covers different play types.
+- Suggested extension: animate events on the pitch so that a match can be played through and positions viewed over time.
+- Until Partner data arrives, the Team can use public or generated placeholder data and replace it with the Partner's CSV files later.
+- If Partner information arrives late, the Team should present based on its current understanding with a draft sprint plan, then explain in the final report how the plan changed after receiving new information.
+
+---
+
+#### 3. Final assessments
+
+- Read the final assessment requirements on Canvas and plan the remaining work backwards from them.
+- The presentation can include an embedded screen-recorded demo of the prototype with live narration.
+- The final report follows a similar structure to the fortnightly reports, so detailed fortnightly documentation makes the final report easier.
+
+---
+
+#### 4. Documentation and evidence
+
+- In the group section, describe the shared work and link to it.
+- In each individual section, link to that member's own folder and explain what was done, why, and the thinking behind it.
+- Tutors have limited time per team, so evidence should be easy to find and clearly linked.
+- Suggested additional planning evidence includes user stories, wireframes, a MoSCoW scope document, a team contingency plan covering absences and backup roles, and ethical considerations such as data storage and anonymity.
